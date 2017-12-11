@@ -1,11 +1,10 @@
 /**
  * Created by Timothy
  */
-
+let fileName = "test.json";
 let fs = require('fs');
-let modList = fs.readFileSync('./GetStops.json');
+let modList = fs.readFileSync('./' + fileName);
 modList = JSON.parse(modList);
-
 
 let NewArray = [];
 
@@ -19,7 +18,7 @@ for (let i = 0; i < modList.length; i++) {
     NewArray.push(temp)
 }
 
-fs.writeFileSync('./GetStops1.json', JSON.stringify(NewArray));
+fs.writeFileSync('./' + fileName + "1", JSON.stringify(NewArray));
 
 
-console.log("Complete you should go check to make sure it all went down ok");
+console.log(`Complete! You should have a files named ${fileName}1.json in your current directory`);
